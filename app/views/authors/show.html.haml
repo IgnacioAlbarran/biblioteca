@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b First name:
+  = @author.first_name
+%p
+  %b Last name:
+  = @author.last_name
+%p
+  %b Email:
+  = @author.email
+%p
+  %b Phone:
+  = @author.phone
+%p
+  %b City:
+  = @author.city
+%p
+  %b Address:
+  = @author.address
+%p
+  %b Website:
+  = @author.website
+
+= link_to 'Edit', edit_author_path(@author)
+\|
+= link_to 'Back', authors_path
