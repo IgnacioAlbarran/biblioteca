@@ -39,6 +39,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Use HAML
 gem 'hamlit-rails'
 
+# Use factory-bot for factories
+gem 'factory_bot'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
