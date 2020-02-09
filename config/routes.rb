@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'web/home'
-  get 'web/about_us'
+  get 'about-us', to: 'web#about_us'
   get 'web/search'
 
   root to: 'web#home'
