@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   root to: 'web#home'
 
-  resources :books
-  resources :authors
+  resources :books, except: [:new, :create]
+  resources :authors do
+    resources :books
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

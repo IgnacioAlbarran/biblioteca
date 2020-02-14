@@ -5,7 +5,7 @@
   = @book.title
 %p
   %b Author:
-  = @book.author
+  = link_to @book.author, author_path(@book.author_id)
 %p
   %b Description:
   = @book.description
