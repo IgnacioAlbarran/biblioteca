@@ -3,6 +3,9 @@ class Book < ApplicationRecord
   belongs_to :author, counter_cache: true
   validates :author, presence: { if: :new_data? }
 
+  scope :with_title, -> { where.not(title: nil) }
+  scope :from_year, ->(year) { where('created_at > ?', Date.new(year)) }
+
   private
 
   def new_data?
