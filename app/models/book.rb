@@ -8,6 +8,16 @@ class Book < ApplicationRecord
   scope :with_title, -> { where.not(title: nil) }
   scope :from_year, ->(year) { where('created_at > ?', Date.new(year)) }
 
+  attr_accessor :price
+
+  VAT_BOOK = 4
+
+  def price_vat_included
+    return 0 if price.nil?
+    vat = price * VAT_BOOK / 100
+    total_price = price + vat
+  end
+
   private
 
   def new_data?
