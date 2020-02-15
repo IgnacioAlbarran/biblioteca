@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.where(author_id: params[:author_id]) || Book.all
+    @books = Book.where(author_id: params[:author_id]).presence || Book.all
   end
 
   # GET /books/1
