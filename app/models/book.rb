@@ -18,6 +18,10 @@ class Book < ApplicationRecord
     total_price = price + vat
   end
 
+  def reviews_count
+    reviews.count
+  end
+
   private
 
   def new_data?
