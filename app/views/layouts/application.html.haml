@@ -1,7 +1,8 @@
 !!!
 %html
   %head
-    %title Biblioteca
+    %title
+      = yield(:title).presence || 'Biblioteca, your best pet project'
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -12,6 +13,7 @@
       %li= link_to 'Books', books_path
       %li= link_to 'Home', web_home_path
       %li= link_to 'About us', about_us_path
+    = yield(:presearch_tip)
     %p
       = form_tag web_search_path do
         = text_field_tag :text_to_search
