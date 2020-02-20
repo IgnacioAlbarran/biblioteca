@@ -3,7 +3,13 @@ class ApplicationController < ActionController::Base
   before_action :set_variant
 
   def set_variant
-    return unless params[:variant].in?(%w(phone desktop tablet))
-    request.variant = params[:variant].to_sym
+    request.variant =
+    if browser.device.tablet?
+      :tablet
+    elsif browser.device.mobile?
+      :phone
+    else
+      :desktop
+    end
   end
 end
