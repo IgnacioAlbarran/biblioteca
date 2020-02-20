@@ -7,7 +7,7 @@ RSpec.describe BooksController, type: :routing do
     end
 
     it "routes to #new" do
-      expect(:get => "/books/new").to route_to("books#new")
+      expect(:get => "/authors/:author_id/books/new").to route_to("books#new")
     end
 
     it "routes to #show" do
