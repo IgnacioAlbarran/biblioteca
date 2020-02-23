@@ -19,6 +19,7 @@
         = text_field_tag :text_to_search
         = submit_tag
   = yield
+
 %p
   %locale: #{I18n.locale}
   = I18n.localize Time.current, format: :long
