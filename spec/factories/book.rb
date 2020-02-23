@@ -2,9 +2,8 @@
 
 FactoryBot.define do
   factory :book do
-    association :author
-
     title { FFaker::Name.last_name }
+    author { FactoryBot.create(:author) }
     description { 'My description' }
     year { (1920..1999).to_a.sample }
     available { 'false' }

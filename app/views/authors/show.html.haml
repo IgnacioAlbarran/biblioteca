@@ -23,7 +23,7 @@
   = @author.website
 %p
   = link_to 'See books!!', author_books_path(@author)
-  = link_to 'New Book', new_author_book_path(params[:id])
+  = link_to 'New Book', new_author_book_path(@author)
 
 = link_to 'Edit', edit_author_path(@author)
 \|

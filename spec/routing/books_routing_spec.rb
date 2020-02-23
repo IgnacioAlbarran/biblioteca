@@ -7,7 +7,7 @@ RSpec.describe BooksController, type: :routing do
     end
 
     it "routes to #new" do
-      expect(:get => "/authors/:author_id/books/new").to route_to("books#new")
+      expect(:get => "/authors/1/books/new").to route_to("books#new", :author_id => "1")
     end
 
     it "routes to #show" do
@@ -20,7 +20,7 @@ RSpec.describe BooksController, type: :routing do
 
 
     it "routes to #create" do
-      expect(:post => "/books").to route_to("books#create")
+      expect(:post => "authors/1/books").to route_to("books#create", :author_id => "1")
     end
 
     it "routes to #update via PUT" do

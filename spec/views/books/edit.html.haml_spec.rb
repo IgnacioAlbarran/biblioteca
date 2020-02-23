@@ -2,16 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "books/edit", type: :view do
   before(:each) do
-    @book = assign(:book, Book.create!(
-      :title => "MyString",
-      :author => nil,
-      :description => "MyString",
-      :year => 1,
-      :available => false,
-      :section => "MyString",
-      :shelf => 1,
-      :order => 1
-    ))
+    @book = FactoryBot.create(:book)
   end
 
   it "renders the edit book form" do
@@ -21,7 +12,7 @@ RSpec.describe "books/edit", type: :view do
 
       assert_select "input[name=?]", "book[title]"
 
-      assert_select "input[name=?]", "book[author_id]"
+      assert_select('select#book_author_id option[selected]').first['value']
 
       assert_select "input[name=?]", "book[description]"
 

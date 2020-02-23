@@ -5,6 +5,9 @@
       %ul
         - @book.errors.full_messages.each do |msg|
           %li= msg
+  .field
+    = f.label :author
+    = f.collection_select :author_id, Author.all, :id, :last_name, include_blank: true
   = render '/common/field_text', f: f, field: :title
   = render '/common/field_text', f: f, field: :description
   = render '/common/field_text', f: f, field: :section

@@ -5,7 +5,7 @@ RSpec.describe "books/index", type: :view do
     assign(:books, [
       Book.create!(
         :title => "Title",
-        :author => nil,
+        :author => FactoryBot.create(:author),
         :description => "Description",
         :year => 2,
         :available => false,
@@ -15,7 +15,7 @@ RSpec.describe "books/index", type: :view do
       ),
       Book.create!(
         :title => "Title",
-        :author => nil,
+        :author => FactoryBot.create(:author),
         :description => "Description",
         :year => 2,
         :available => false,
@@ -29,7 +29,6 @@ RSpec.describe "books/index", type: :view do
   it "renders a list of books" do
     render
     assert_select "tr>td", :text => "Title".to_s, :count => 2
-    assert_select "tr>td", :text => nil.to_s, :count => 2
     assert_select "tr>td", :text => "Description".to_s, :count => 2
     assert_select "tr>td", :text => 2.to_s, :count => 2
     assert_select "tr>td", :text => false.to_s, :count => 2

@@ -29,7 +29,7 @@ RSpec.describe AuthorsController, type: :controller do
   # Author. As you add validations to Author, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    { first_name: 'Julio' }
+    { first_name: 'Julio', email: 'pepeperez@gmail.com'}
   }
 
   let(:invalid_attributes) {
