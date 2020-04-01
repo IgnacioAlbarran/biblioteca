@@ -1,18 +1,27 @@
 - content_for(:title) do
   Book list
-%h1 Listing books
+%h1
+  = t 'h1.books'
 
 %table
   %thead
     %tr
-      %th Title
-      %th Author
-      %th Description
-      %th Year
-      %th Available
-      %th Section
-      %th Shelf
-      %th Order
+      %th
+        = (t 'activerecord.models.attributes.title').capitalize
+      %th
+        = (t 'activerecord.models.attributes.author').capitalize
+      %th
+        = (t 'activerecord.models.attributes.description').capitalize
+      %th
+        = (t 'activerecord.models.attributes.year').capitalize
+      %th
+        = (t 'activerecord.models.attributes.available').capitalize
+      %th
+        = (t 'activerecord.models.attributes.section').capitalize
+      %th
+        = (t 'activerecord.models.attributes.shelf').capitalize
+      %th
+        = (t 'activerecord.models.attributes.order').capitalize
       %th
       %th
       %th

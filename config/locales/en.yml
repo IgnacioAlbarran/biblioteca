@@ -16,10 +16,17 @@ en:
         other: books
       attributes:
           title: title
-          description: description
           author: author
+          description: description
+          year: year
+          available: available
+          section: section
           shelf: shelf
           order: order
+
+  h1:
+    books: Book list
+
   date:
     abbr_day_names:
     - Sun

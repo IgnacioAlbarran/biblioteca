@@ -14,13 +14,18 @@ es:
       book:
         one: libro
         other: libros
-      atributes:
-        book:
-          title: título
-          description: descripción
-          author: autor
-          shelf: estantería
-          order: solicitud
+      attributes:
+        title: título
+        author: autor
+        description: descripción
+        year: año
+        available: disponible
+        section: sección
+        shelf: estantería
+        order: pedido
+
+  h1:
+    books: Listado de libros
 
   date:
     abbr_day_names:
