@@ -9,10 +9,10 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     %ul
-      %li= link_to 'Authors', authors_path
-      %li= link_to 'Books', books_path
-      %li= link_to 'Home', web_home_path
-      %li= link_to 'About us', about_us_path
+      %li= link_to (t 'activerecord.models.author.other'), authors_path
+      %li= link_to (t 'activerecord.models.book.other'), books_path
+      %li= link_to (t 'actions.home'), web_home_path
+      %li= link_to (t 'actions.about_us'), about_us_path
     = yield(:presearch_tip)
     %p
       = form_tag web_search_path do

@@ -6,25 +6,15 @@
 %table
   %thead
     %tr
+    - book_atributos = %w[title author description year available section shelf order]
+
+    - book_atributos.each do |atributo|
       %th
-        = (t 'activerecord.models.attributes.title').capitalize
-      %th
-        = (t 'activerecord.models.attributes.author').capitalize
-      %th
-        = (t 'activerecord.models.attributes.description').capitalize
-      %th
-        = (t 'activerecord.models.attributes.year').capitalize
-      %th
-        = (t 'activerecord.models.attributes.available').capitalize
-      %th
-        = (t 'activerecord.models.attributes.section').capitalize
-      %th
-        = (t 'activerecord.models.attributes.shelf').capitalize
-      %th
-        = (t 'activerecord.models.attributes.order').capitalize
-      %th
-      %th
-      %th
+        = (t "activerecord.models.attributes.#{atributo}").capitalize
+
+    %th
+    %th
+    %th
 
   %tbody
     - @books.each do |book|
@@ -37,8 +27,8 @@
         %td= book.section
         %td= book.shelf
         %td= book.order
-        %td= link_to 'Show', book_path(book)
-        %td= link_to 'Edit', edit_book_path(book)
-        %td= link_to 'Destroy', book, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to (t 'actions.show'), book_path(book)
+        %td= link_to (t 'actions.edit'), edit_book_path(book)
+        %td= link_to (t 'actions.destroy'), book, :method => :delete, :data => { :confirm => 'Are you sure?' }
       %br
 

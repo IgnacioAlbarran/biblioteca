@@ -6,13 +6,11 @@
 %table
   %thead
     %tr
-      %th First name
-      %th Last name
-      %th Email
-      %th Phone
-      %th City
-      %th Address
-      %th Website
+      - author_atributos = %w[first_name last_name email phone city address website]
+
+      - author_atributos.each do |atributo|
+        %th
+          = (t "activerecord.models.attributes.#{atributo}").capitalize
       %th
       %th
       %th
