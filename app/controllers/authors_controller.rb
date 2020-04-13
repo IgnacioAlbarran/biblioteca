@@ -61,6 +61,13 @@ class AuthorsController < ApplicationController
     end
   end
 
+  def params_order_to_db
+    {
+      name: :first_name,
+      created_at: 'created_at DESC'
+    }[params[:order].to_sym] || :email
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_author
@@ -70,12 +77,5 @@ class AuthorsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def author_params
       params.require(:author).permit(:first_name, :last_name, :email, :phone, :city, :address, :website)
-    end
-
-    def params_order_to_db
-      {
-        name: :first_name,
-        created_at: 'created_at DESC'
-      }[params[:order]] || :email
     end
 end
