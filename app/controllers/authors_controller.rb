@@ -65,7 +65,7 @@ class AuthorsController < ApplicationController
     {
       name: :first_name,
       created_at: 'created_at DESC'
-    }[params[:order].to_sym] || :email
+    }[params[:order]].&:to_sym || :email
   end
 
   private
