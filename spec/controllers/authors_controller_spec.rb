@@ -148,4 +148,11 @@ RSpec.describe AuthorsController, type: :controller do
       expect(response).to redirect_to(author_path(new_author))
     end
   end
+
+  context 'with a non existing id' do
+    it 'should retrieve a 404 not found code' do
+      get :show, params: { id: 888 }
+      expect(response.status).to eq(404)
+    end
+  end
 end
