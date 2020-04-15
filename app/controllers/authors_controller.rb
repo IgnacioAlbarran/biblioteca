@@ -1,4 +1,5 @@
 class AuthorsController < ApplicationController
+  before_action :redirected_authors, only: :show
   before_action :set_author, only: [:show, :edit, :update, :destroy]
 
   # GET /authors
@@ -72,6 +73,11 @@ class AuthorsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_author
       @author = Author.find(params[:id])
+    end
+
+    def redirected_authors
+      return unless params[:id].in? Author::REDIRECTED_AUTHORS.keys
+      redirect_to author_path(Author::REDIRECTED_AUTHORS[params[:id]])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
