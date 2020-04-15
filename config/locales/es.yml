@@ -23,9 +23,26 @@ es:
         section: sección
         shelf: estantería
         order: pedido
+        first_name: Nombre
+        last_name: Apellidos
+        email: Email
+        phone: Teléfono
+        city: Población
+        address: Dirección
+        website: Página Web
 
   h1:
+    home: 'Biblioteca, mi proyecto Rails de práctica version '
     books: Listado de libros
+    authors: Listado de autores
+    about_us: Acerca de nosotros
+
+  actions:
+    show: Mostrar
+    edit: Editar
+    destroy: Borrar
+    home: Inicio
+    about_us: Acerca de nosotros
 
   date:
     abbr_day_names:

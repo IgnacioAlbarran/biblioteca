@@ -23,9 +23,26 @@ en:
           section: section
           shelf: shelf
           order: order
+          first_name: first_name
+          last_name: last_name
+          email: email
+          phone: phone
+          city: city
+          address: address
+          website: website
 
   h1:
+    home: 'Biblioteca, my Rails pet project version '
     books: Book list
+    authors: Authors list
+    about_us: About us
+
+  actions:
+    show: Show
+    edit: Edit
+    destroy: Destroy
+    home: Home
+    about_us: About us
 
   date:
     abbr_day_names:

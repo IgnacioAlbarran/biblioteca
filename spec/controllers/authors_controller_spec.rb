@@ -138,4 +138,21 @@ RSpec.describe AuthorsController, type: :controller do
     end
   end
 
+  describe 'redirect to author' do
+    let(:new_author) { 444 }
+    let(:old_author) { '333' }
+    before { stub_const('Author::REDIRECTED_AUTHORS', { old_author => new_author }) }
+
+    it "should redirect from the old author to the new one" do
+      get :show, params: { id: old_author }
+      expect(response).to redirect_to(author_path(new_author))
+    end
+  end
+
+  context 'with a non existing id' do
+    it 'should retrieve a 404 not found code' do
+      get :show, params: { id: 888 }
+      expect(response.status).to eq(404)
+    end
+  end
 end
