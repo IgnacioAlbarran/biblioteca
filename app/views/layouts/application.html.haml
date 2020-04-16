@@ -19,10 +19,10 @@
         = text_field_tag :text_to_search
         = submit_tag
   = yield
-%p
-  locale: #{I18n.locale}
-  = I18n.localize Time.current, format: :long
-%p
-  = link_to 'Español', request.path.to_s + '?locale=es'
-  = link_to 'Inglés', request.path.to_s + '?locale=en'
-- console if Rails.env.development?
+  %p
+    locale: #{I18n.locale}
+    = I18n.localize Time.current, format: :long
+  %p
+    = link_to 'Español', request.path.to_s + '?locale=es'
+    = link_to 'Inglés', request.path.to_s + '?locale=en'
+  - console if Rails.env.development?
